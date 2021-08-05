@@ -80,7 +80,7 @@ section div div p:nth-child(4) {
 
     section div img {
         height: 180px;
-        min-width: 350px;
+        min-width: 290px;
     }
 }
 
