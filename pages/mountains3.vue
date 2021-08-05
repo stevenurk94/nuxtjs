@@ -85,6 +85,11 @@ section div div p:nth-child(4) {
     section div div {
         padding: 10px 0 10px 0;
     }
+
+    section div img {
+        height: 180px;
+        min-width: 350px;
+    }
 }
 
 
