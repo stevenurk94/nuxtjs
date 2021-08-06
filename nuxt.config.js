@@ -42,5 +42,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // PWA Configuration: ...
+  pwa: {
+    manifest: {
+      name: "Genesisnow"
+    }
   }
 }
