@@ -212,9 +212,14 @@ html[data-theme="dark"] {
   --grey-3: #dbdbdb;
 }
 
+
+
+
 ::selection {
-  background: var(--dark-gold);
+  color: var(--white);
+  background: var(--darkblue);
 }
+
 
 header, body {
   background: var(--bg);

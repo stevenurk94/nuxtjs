@@ -22,9 +22,9 @@
 
         <ul>
           <li><NuxtLink to="/">Home<span></span></NuxtLink></li>
-          <li><NuxtLink to="/mountains2">Mountains<span></span></NuxtLink></li>
-          <li><NuxtLink to="/mountains3">Mountains2<span></span></NuxtLink></li>
-          <li><NuxtLink to="/mountains">Mountains3<span></span></NuxtLink></li>
+          <li><NuxtLink to="/mountains">Mountains<span></span></NuxtLink></li>
+          <li><NuxtLink to="/mountains2">Mountains2<span></span></NuxtLink></li>
+          <li><NuxtLink to="/beers">Beers<span></span></NuxtLink></li>
           <li><NuxtLink to="/contact">Contact<span></span></NuxtLink></li>
           <button type="button" name="button" class="button">Lorem Ipsum Dolor</button>
         </ul>
@@ -122,19 +122,6 @@ export default {
 }
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

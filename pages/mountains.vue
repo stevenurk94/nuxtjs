@@ -1,10 +1,7 @@
 <template>
     <main>
         <section>
-            <div
-                v-for="mountain in mountains"
-                :key="mountain.id"
-            >
+            <div v-for="mountain in mountains" :key="mountain.id">
                 <img :src="mountain.image" :alt="mountain.title">
                 <div>
                     <h2>{{ mountain.continent }}</h2>
@@ -14,27 +11,26 @@
                 </div>
             </div>
         </section>
-
-
     </main>
 </template>
 
 <script>
-export default {
-    async fetch() {
-        this.mountains = await fetch(
-            "https://api.nuxtjs.dev/mountains"
-        ).then((res) => res.json())
 
-    },
-    data() {
+import mountains from "~/assets/json/mountains.json";
+
+export default {
+    data () {
         return {
-            mountains: []
+            mountains
         }
     }
-
 }
+
+
+
+
 </script>
+
 
 
 <style scoped>
@@ -94,4 +90,3 @@ section div div p:nth-child(4) {
 
 
 </style>
-
