@@ -44,10 +44,12 @@ export default {
   build: {
   },
 
-  // PWA Configuration: ...
+  // PWA Configuration: https://pwa.nuxtjs.org/meta
   pwa: {
     manifest: {
-      name: "Genesisnow"
+      name: "Genesis",
+      short_name: "",
+      theme_color: "#70520B"
     }
   }
 }
