@@ -16,17 +16,14 @@
 
 <script>
 
-import mountains from "~/assets/json/mountains.json";
+import { mapState } from 'vuex';
 
 export default {
-    data () {
-        return {
-            mountains
-        }
+
+    computed: {
+        ...mapState(['mountains']),
     }
 }
-
-
 
 
 </script>

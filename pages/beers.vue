@@ -1,4 +1,3 @@
-
 <template>
     <main>
         <section>
@@ -51,6 +50,7 @@ export default {
 }
 
 </script>
+
 
 <style scoped>
 

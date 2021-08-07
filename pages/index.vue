@@ -4,14 +4,9 @@
 
     <section>
 
-
-
-
       <div class="typewriter">
         <h2 class="typewriter-h2"></h2>
       </div>
-
-
 
     </section>
   </main>
