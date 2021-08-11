@@ -1,8 +1,7 @@
 <template>
 
-
-  <header data-scroll-section>
-    <div class="nav-container">
+  <header>
+    <div class="nav-section">
       <NuxtLink to="/">Genesis.</NuxtLink>
       <div>
         <input type="checkbox" id="night-toggle">
@@ -23,12 +22,14 @@
         <ul>
           <li><NuxtLink to="/">Home<span></span></NuxtLink></li>
           <li><NuxtLink to="/mountains">Mountains<span></span></NuxtLink></li>
-          <li><NuxtLink to="/mountains2">Lorem Ipsum<span></span></NuxtLink></li>
+          <li><NuxtLink to="/mountains2">Lorem<span></span></NuxtLink></li>
           <li><NuxtLink to="/beers">Beers<span></span></NuxtLink></li>
           <li><NuxtLink to="/contact">Contact<span></span></NuxtLink></li>
-          <button type="button" name="button" class="button">Lorem Ipsum Dolor</button>
         </ul>
-
+        <div>
+          <NuxtLink to="/login" class="button">Log In</NuxtLink>
+          <NuxtLink to="/signup" class="button">Sign Up</NuxtLink>
+        </div>
       </nav>
     </div>
   </header>
@@ -46,7 +47,19 @@ export default {
 
   mounted: function() {
 
-    document.body.setAttribute("data-scroll-container", "");
+
+    // SCROLL TRIGGER HEADER
+
+    const header = document.querySelector("header");
+
+    window.onscroll = function() {
+      if (window.scrollY > 100) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    };
+
 
 
     // TOGGLE FUNCTION
@@ -91,8 +104,8 @@ export default {
 
     // NAV-open/close
     const navButton = document.getElementById("toggle");
-    const navMenu = document.querySelector("header .nav-container nav");
-    const navItems = document.querySelectorAll("header .nav-container nav ul li, header .nav-container nav ul button, header > div > a");
+    const navMenu = document.querySelector("header .nav-section nav");
+    const navItems = document.querySelectorAll("header .nav-section nav ul li, header .nav-section nav ul button, header > div > a");
 
     let menuOpen = false;
 
@@ -144,22 +157,44 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  box-shadow: var(--boxshadow);
   z-index: 20;
+  position: fixed;
+  transition: all 400ms ease-in-out;
 }
 
-header .nav-container {
+header.scrolled {
+  background: var(--bg);
+  box-shadow: var(--boxshadow);
+}
+
+
+/*
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+*/
+
+header .nav-section {
   width: 90%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
 
+
 /* ################################## BRAND/LOGO ############### */
-header .nav-container > a {
+header .nav-section > a {
   color: var(--darkblue-light);
-  transition: var(--trans);
   font-size: 35px;
   font-weight: bold;
   text-transform: uppercase;
@@ -167,10 +202,16 @@ header .nav-container > a {
   align-items: center;  
   display: flex;
   padding: 25px 0;
+  transition: all 400ms ease-in-out;
+}
+
+header.scrolled .nav-section > a {
+  padding: 15px 0;
+  transition: all 400ms ease-in-out;
 }
 
 @media screen and (max-width: 991px) {
-  header .nav-container > a {
+  header .nav-section > a {
     order: 2;
   }
 }
@@ -179,17 +220,17 @@ header .nav-container > a {
 /* ################################## NIGHT MODE TOGGLE  ###### */
 
 
-header .nav-container div {
+header .nav-section div {
   display: flex;
   justify-content: center;
 }
 
 
-header .nav-container div input {
+header .nav-section div input {
   display: none;
 }
 
-header .nav-container div label {
+header .nav-section div label {
   display: flex;
   width: 45px;
   background: var(--darkblue);
@@ -206,17 +247,17 @@ header .nav-container div label {
 
 
 @media screen and (max-width: 991px) {
-  header .nav-container div label {
+  header .nav-section div label {
     order: 1;
   }
 }
 
 
-header .nav-container div input:checked ~ label {
+header .nav-section div input:checked ~ label {
   background: var(--white);
 }
 
-header .nav-container div label::before {
+header .nav-section div label::before {
   content: "";
   height: 17px;
   width: 17px;
@@ -229,27 +270,27 @@ header .nav-container div label::before {
 
 }
 
-header .nav-container div input:checked ~ label::before {
+header .nav-section div input:checked ~ label::before {
   background-color: var(--darkblue);
   transform: translateX(22.4px);
 }
 
 
-header .nav-container div label div {
+header .nav-section div label div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-header .nav-container div label div::before {
+header .nav-section div label div::before {
   content: "\F185";
   font-family: fa-solid;
   color: var(--darkblue);
 
 }
 
-header .nav-container div label div::after {
+header .nav-section div label div::after {
   content: "\F186";
   font-family: fa-solid;
   color: var(--white);
@@ -260,11 +301,11 @@ header .nav-container div label div::after {
 
 /* ################################## MENU BUTTON ############### */
 
-header .nav-container input[type="checkbox"] {
+header .nav-section input[type="checkbox"] {
   display: none;
 }
 
-header .nav-container label {
+header .nav-section label {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -276,13 +317,13 @@ header .nav-container label {
 }
 
 @media screen and (max-width: 991px) {
-  header .nav-container label {
+  header .nav-section label {
     display: flex;
     order: 3;
   }
 }
 
-header .nav-container label span {
+header .nav-section label span {
   position: absolute;
   background-color: var(--darkblue-light);
   transition: var(--trans);
@@ -293,44 +334,44 @@ header .nav-container label span {
 }
 
 
-header .nav-container label span:not(:nth-child(3)) {
+header .nav-section label span:not(:nth-child(3)) {
   box-shadow: 0px 0.125rem 0.25rem 0px rgb(0 0 0 / 12%);
 }
 
-header .nav-container label span:nth-child(1) {
+header .nav-section label span:nth-child(1) {
   top: 0;
 }
-header .nav-container label span:nth-child(4) {
+header .nav-section label span:nth-child(4) {
   bottom: 0;
 }
 
 /*
-header .nav-container input:checked ~ label span:nth-child(1) {
+header .nav-section input:checked ~ label span:nth-child(1) {
   transform: translateY(75px);
   opacity: 0;
 }
 
-header .nav-container input:checked ~ label span:nth-child(4) {
+header .nav-section input:checked ~ label span:nth-child(4) {
   transform: translateY(-75px);
   opacity: 0;
 }
 */
 
-header .nav-container input:checked ~ label span:nth-child(1) {
+header .nav-section input:checked ~ label span:nth-child(1) {
   transform: translateY(27px);
   width: 0;
 }
 
-header .nav-container input:checked ~ label span:nth-child(4) {
+header .nav-section input:checked ~ label span:nth-child(4) {
   transform: translateY(-27px);
   width: 0;
 }
 
-header .nav-container input:checked ~ label span:nth-child(2) {
+header .nav-section input:checked ~ label span:nth-child(2) {
   transform: rotate(45deg);
 }
 
-header .nav-container input:checked ~ label span:nth-child(3) {
+header .nav-section input:checked ~ label span:nth-child(3) {
   transform: rotate(-45deg);
 }
 
@@ -341,22 +382,26 @@ header .nav-container input:checked ~ label span:nth-child(3) {
 
 
 
-/* ################################## MENU ITEMS  ############### */
+/* ################################## NAV ITEMS  ############### */
 @media screen and (max-width: 991px) {
-  header .nav-container {
+  header .nav-section {
     justify-content: space-between;
   }
 }
 
+header .nav-section nav {
+  display: flex;
+  align-items: center;
+}
 
 
-header .nav-container nav ul {
+header .nav-section nav ul {
   display: flex;
   justify-content: center;
   height: 100%;
 }
 
-header .nav-container nav ul li {
+header .nav-section nav ul li {
   font-size: 19px;
   font-weight: 500;
   height: 100%;
@@ -369,68 +414,37 @@ header .nav-container nav ul li {
   flex-wrap: nowrap;
 }
 
-header .nav-container nav ul button {
+header .nav-section nav ul button {
   display: none;
 }
 
-header .nav-container nav ul li a {
+header .nav-section nav ul li a {
   color: var(--darkblue-light);
   position: relative;
   width: 100%;
-
+  transition: all ease-in 250ms;
 }
 
-header .nav-container nav ul li a::after {
+header .nav-section nav ul li a::after {
   content: "";
   width: 0;
   height: 1.5px;
+  opacity: .2;
+  border-radius: .5rem;
   background-color: var(--darkblue-light);
   display: block;
   border-radius: 50px;
-  bottom: 0;
+  bottom: 8px;
   transition: all ease-in 250ms;
   position: absolute;
 }
 
-header .nav-container nav ul li:hover a::after {
+header .nav-section nav ul li:hover a::after {
   width: 100%;
+  opacity: 1;
 }
 
-
-
-header .nav-container nav ul li a::before {
-  content: "";
-  width: 4px;
-  height: 4px;
-  background-color: var(--darkblue-light);
-  display: block;
-  border-radius: 50%;
-  opacity: 0;
-  left: 0;
-  position: absolute;
-}
-
-header .nav-container nav ul li:hover a::before {
-  animation: move-element 350ms ease-in;
-}
-
-@keyframes move-element {
-  5% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(60px);
-  }
-}
-
-
-header .nav-container nav ul li a span {
-  display: none;
-}
-
-header .nav-container nav ul .button {
+header .nav-section nav ul li a span {
   display: none;
 }
 
@@ -444,8 +458,9 @@ header .nav-container nav ul .button {
     position: absolute;
   }
 
-  header .nav-container nav {
+  header .nav-section nav {
     display: flex;
+    flex-direction: column;
     background: var(--darkblue);
     border-bottom-left-radius: 50px;
     position: absolute;
@@ -456,20 +471,34 @@ header .nav-container nav ul .button {
     top: 0;
     opacity: 0;
     padding: 0;
-    transition: all ease-in 250ms;
+    transition: 
+      height ease-in 150ms, 
+      width ease-in 150ms,
+      top ease-in 150ms,
+      padding ease-in 150ms,
+      overflow ease-in 150ms,
+      opacity ease-in 500ms;
+
     justify-content: center;
   }
 
-  header .nav-container nav.open {
+  header .nav-section nav.open {
     width: 100%;
     height: 475px;
     overflow: visible;
     top: 84px;
     opacity: 1;
     padding: 30px 20px 50px 20px;
+    transition: 
+      height ease-in 150ms, 
+      width ease-in 150ms,
+      top ease-in 150ms,
+      padding ease-in 150ms,
+      overflow ease-in 150ms,
+      opacity ease-in 500ms;
   }
 
-  header .nav-container nav ul {
+  header .nav-section nav ul {
     flex-direction: column;
     max-width: 560px;
     width: 100%;
@@ -478,13 +507,13 @@ header .nav-container nav ul .button {
 
   }
 
-  header .nav-container nav ul li {
+  header .nav-section nav ul li {
     border-bottom: 1px solid var(--white-opace);
     padding: 0;
 
   }
 
-  header .nav-container nav ul li a {
+  header .nav-section nav ul li a {
     color: var(--white);
     justify-content: space-between;
     display: flex;
@@ -492,7 +521,7 @@ header .nav-container nav ul .button {
   }
 
 
-  header .nav-container nav ul li a span {
+  header .nav-section nav ul li a span {
     display: flex;
     font-family: fa-solid;
     font-size: 20px;
@@ -504,11 +533,7 @@ header .nav-container nav ul .button {
 
 
 
-  header .nav-container nav ul .button {
-    display: flex;
-    margin-top: 50px;
 
-  }
 }
 
 

@@ -217,11 +217,11 @@ html[data-theme="dark"] {
 
 ::selection {
   color: var(--white);
-  background: var(--darkblue);
+  background: var(--dark-gold);
 }
 
 
-header, body {
+body {
   background: var(--bg);
   transition: var(--trans);
 }
@@ -231,9 +231,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
-
   max-width: 100%;
 }
 
@@ -292,7 +289,6 @@ main section {
   width: fit-content;
   z-index: 1;
   padding: 8px 16px;
-  margin-top: 25px;
   white-space: nowrap;
   cursor: pointer;
 
@@ -397,6 +393,151 @@ p {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################################################ */
+/* ############################ FORMS ######################### */
+/* ############################################################ */
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--bg);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: var(--cbf-boxshadow);
+  margin: 150px 0 100px 0;
+  transition: var(--trans);
+}
+
+.form-field {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+  
+}
+
+.form-field::before  {
+  content: attr(data-field);
+  opacity: 0;
+  font-family: 'Work Sans', serif;
+  color: var(--darkblue);
+  font-size: 11px;
+  padding: 2px 5px 2px 2px;
+  top: -8px;
+  left: 22px;
+  position: absolute;
+  background: var(--bg);
+  z-index: 2;
+  transition: all ease-in 400ms;
+  border-radius: .8rem;
+}
+
+.form-input {
+  border-radius: 1.5rem;
+  font-family: 'Work Sans', serif;
+  width: 100%;
+  cursor: text;
+  padding: 15px 22px 15px 22px;
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--grey-2);
+  background: var(--bg);
+  transition: border ease-in 400ms;
+  position: relative;
+  transition: var(--trans);
+
+}
+
+.form-input::placeholder {
+  color: var(--grey-3);
+  transition: color ease-in 400ms;
+}
+
+.submit.button {
+  background: var(--pink);
+  width: 100%;
+  justify-content: center;
+  height: 48px;
+  cursor: pointer;
+}
+
+
+
+/* ####### FIELD VALIDATION ############################# */
+
+
+
+/* WHEN FIELD IS HOVERED */
+.form-field:hover::before {
+  opacity: 1;
+}
+
+.form-input:hover {
+  border: 1px solid var(--darkblue);
+}
+
+
+
+
+/* WHEN FIELD IS ACTIVE */
+.form-field.active::before {
+  opacity: 1;
+}
+
+.form-field.active input[type="text"],
+.form-field.active textarea {
+  border: 1px solid var(--darkblue);
+}
+
+
+/* WHEN FIELD IS INVALID */
+.form-field.invalid::before {
+  opacity: 1;
+  color: var(--red);
+  transition: all ease-in 400ms;
+}
+
+.form-field.invalid input[type="text"],
+.form-field.invalid textarea {
+  border: 1px solid var(--red);
+}
+
+.form-field.invalid input[type="text"]::placeholder,
+.form-field.invalid textarea::placeholder {
+  color: var(--red);
+}
+
+
+/* WHEN FIELD IS INVALID & ILLEGAL */
+.form-field p {
+  display: none;
+  color: var(--red);
+  font-size: 10px;
+}
+
+
+/* WHEN FIELD IS VALID AND FILLED */
+.form-field.filled::before {
+  opacity: 1;
+  color: var(--darkblue);
+}
+
+.form-field.filled input[type="text"],
+.form-field.filled textarea {
+  border: 1px solid var(--darkblue);
+}
 
 
 

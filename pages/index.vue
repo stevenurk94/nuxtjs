@@ -1,15 +1,44 @@
 <template>
 
-  <main data-scroll-section>
+  <main>
+
+    <section class="home-hero">
+
+      <div>
+
+        <h1>Some text</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur ipsam odit molestiae necessitatibus perspiciatis, consequatur quibusdam minima incidunt ex a.</p>
+        <input type="text" placeholder="Search here..." name="search">
+
+      </div>
+    </section>
 
     <section>
 
-      <div class="typewriter">
-        <h2 class="typewriter-h2"></h2>
+      <div class="prestige">
+        <div>
+          <h2>Some text</h2>
+          <p>More text</p>
+        </div>
+        <div>
+          <h2>Some text</h2>
+          <p>More text</p>
+        </div>      
+        <div>
+          <h2>Some text</h2>
+          <p>More text</p>
+        </div>
       </div>
 
     </section>
+    <section class="section">
+
+    </section>
+
+
+
   </main>
+
   
 </template>
 
@@ -27,43 +56,55 @@ export default {
 
 <style scoped>
 
-/*
-################################################################
-######################### MAIN HEADER ##########################
-################################################################
-*/
 
-
-main section .typewriter {
-  display: flex;
-  padding: 50px 0;
-  align-items: center;
-  justify-content: center;
+.home-hero {
   background: var(--darkblue);
-  width: 100%;
-  border-radius: 100px;
-  text-align: center;
-  margin: 300px auto 300px auto;
+  max-width: 100%;
 }
 
-main section .typewriter h2 {
-  position: relative;
-  width: max-content;
-  color: #fff;
+.home-hero div {
+  margin-top: 25%;
+}
+
+.home-hero input {
+  height: 3.5rem;
+  border-radius: 2.8rem;
+  width: 40rem;
+  border: 1px solid var(--darkblue);
   font-family: 'Work Sans', serif;
-  font-size: 40px;
+  padding-left: 1.5rem;
+  outline: none;
 }
 
 
 
 
-/*
-############## COOKIE BANNER ##########################
-*/
 
-.cookie_melding {
-  margin-top: 50px;
+
+main .prestige {
+  display: flex;
+  transform: translateY(-50px);
 }
+
+
+main .prestige div {
+  width: 50%;
+  background: var(--dark-gold);
+  height: 120px;
+  margin: 0 15px;
+  border-radius: 15px;
+  padding: 35px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
