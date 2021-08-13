@@ -241,7 +241,7 @@ main section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 90px 0 90px 0;
+  padding: 150px 0 90px 0;
 }
 
 
