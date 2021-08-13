@@ -46,7 +46,7 @@ export default {
 
   // Axios Configuration: https://axios.nuxtjs.org/setup
   axios: {
-    baseURL: "https://nuxtjs-stevenurk94.vercel.app/"
+    baseURL: "https://genesisnow.herokuapp.com/"
   },
 
   // Auth Configuration: https://auth.nuxtjs.org/schemes/local.html#options
