@@ -41,13 +41,12 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
   ],
 
   // Axios Configuration: https://axios.nuxtjs.org/setup
   axios: {
-    baseURL: "https://genesisnow.herokuapp.com/"
-    //process.env.API_AUTH_URL
+    baseURL: process.env.API_AUTH_URL
   },
 
   // Auth Configuration: https://auth.nuxtjs.org/schemes/local.html#options
