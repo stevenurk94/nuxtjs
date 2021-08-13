@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 export default {
   pageTransition: 'pages',
 
@@ -37,8 +39,39 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth'
   ],
+
+  // Axios Configuration: https://axios.nuxtjs.org/setup
+  axios: {
+    baseURL: process.env.API_AUTH_URL
+  },
+
+  // Auth Configuration: https://auth.nuxtjs.org/schemes/local.html#options
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: 'auth/local',
+            method: 'post',
+            propertyName: 'jwt'
+          },
+
+          user: {
+            url: 'users/me',
+            method: 'get',
+            propertyName: false
+          },
+
+          logout: false
+
+        }
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

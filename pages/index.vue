@@ -58,7 +58,7 @@ export default {
 
 
 .home-hero {
-  background: var(--darkblue);
+  background: yellowgreen;
   max-width: 100%;
 }
 

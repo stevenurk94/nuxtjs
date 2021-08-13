@@ -10,6 +10,18 @@ export const mutations = {
     }
 }
 
+export const getters = {
+
+    // Login system variables
+    isAuthenticated(state) {
+        return state.auth.loggedIn;
+    },
+
+    loggedInUser(state) {
+        return state.auth.user;
+    }
+}
+
 export const actions = {
 
 

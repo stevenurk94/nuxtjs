@@ -25,10 +25,14 @@
           <li><NuxtLink to="/cities">Cities<span></span></NuxtLink></li>
           <li><NuxtLink to="/beers">Beers<span></span></NuxtLink></li>
           <li><NuxtLink to="/contact">Contact<span></span></NuxtLink></li>
+
+          <li v-if="isAuthenticated"><NuxtLink to="/profile">My Profile</NuxtLink></li>
+          <li v-if="isAuthenticated"><a @click="logout">Logout</a></li>
+
         </ul>
-        <div>
+        <div v-if="!isAuthenticated">
           <NuxtLink to="/login" class="button">Log In</NuxtLink>
-          <NuxtLink to="/signup" class="button">Sign Up</NuxtLink>
+          <NuxtLink to="/register" class="button">Register</NuxtLink>
         </div>
       </nav>
     </div>
@@ -41,12 +45,25 @@
 
 <script>
 
+import { mapGetters } from "vuex";
 
 export default {
 
+  
+  // Login Authentication
+  computed: {
+    ...mapGetters(["isAuthenticated", "loggedInUser"])
+  },
+
+  // Logout
+  methods: {
+    async logout() {
+      await this.$auth.logout()
+    }
+  },
+
 
   mounted: function() {
-
 
     // SCROLL TRIGGER HEADER
 
