@@ -34,7 +34,7 @@ export default {
         Notification,
     },
 
-    middleware: "guest",
+    // middleware: "guest",
 
     data() {
         return {
@@ -56,7 +56,7 @@ export default {
                     },
                 });
 
-                this.$router.push("/profile");
+                this.$router.push("/");
                 
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
