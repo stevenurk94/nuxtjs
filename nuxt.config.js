@@ -46,7 +46,8 @@ export default {
 
   // Axios Configuration: https://axios.nuxtjs.org/setup
   axios: {
-    baseURL: process.env.API_AUTH_URL
+    baseURL: "https://genesisnow.herokuapp.com/"
+    //process.env.API_AUTH_URL
   },
 
   // Auth Configuration: https://auth.nuxtjs.org/schemes/local.html#options
