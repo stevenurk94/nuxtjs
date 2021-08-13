@@ -22,7 +22,7 @@
         <ul>
           <li><NuxtLink to="/">Home<span></span></NuxtLink></li>
           <li><NuxtLink to="/mountains">Mountains<span></span></NuxtLink></li>
-          <li><NuxtLink to="/mountains2">Lorem<span></span></NuxtLink></li>
+          <li><NuxtLink to="/cities">Cities<span></span></NuxtLink></li>
           <li><NuxtLink to="/beers">Beers<span></span></NuxtLink></li>
           <li><NuxtLink to="/contact">Contact<span></span></NuxtLink></li>
         </ul>
