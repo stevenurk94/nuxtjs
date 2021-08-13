@@ -62,8 +62,7 @@ export default {
                     password: this.password,
                 });
 
-                this.success = `A confirmation link has been sent to your email account. \
-                Please click on the link to complete the registration process.`;
+                this.success = `A confirmation link has been sent to your email account. \ Please click on the link to complete the registration process.`;
 
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
