@@ -25,6 +25,8 @@
 <script>
 
 export default {
+    
+
     middleware: "guest",
 
     data() {
@@ -37,6 +39,7 @@ export default {
 
     methods: {
         async forgotPassword() {
+            
             try {
                 await this.$axios.post("auth/forgot-password", {
                     email: this.email
@@ -44,11 +47,24 @@ export default {
 
                 this.error = null;
                 this.success = `A reset password link has been sent to your email account. Please click on the link to complete the password reset.`;
+                
 
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
+                document.querySelector("button").classList.remove("loading");
             }
         }
+    },
+
+    mounted: function() {
+        var button = document.querySelector("button");
+
+        button.addEventListener("click", () => {
+            button.classList.add("loading");
+        })
+
     }
 }
 </script>
+
+
