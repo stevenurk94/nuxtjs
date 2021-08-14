@@ -27,7 +27,7 @@
           <li><NuxtLink to="/contact">Contact<span></span></NuxtLink></li>
 
           <li v-if="isAuthenticated"><NuxtLink to="/profile">My Profile</NuxtLink></li>
-          <li v-if="isAuthenticated"><a @click="logout">Logout</a></li>
+          <li v-if="isAuthenticated"><a href="/" @click="logout">Logout</a></li>
 
         </ul>
         <div v-if="!isAuthenticated">
