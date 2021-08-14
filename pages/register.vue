@@ -31,6 +31,7 @@
 <script>
 
 export default {
+
     middleware: "guest",
 
     data() {
@@ -42,7 +43,6 @@ export default {
             error: null,
         };
     },
-
 
     methods: {
         async register() {
@@ -62,7 +62,7 @@ export default {
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
             }
-        }
-    }
+        },
+    },
 }
 </script>
