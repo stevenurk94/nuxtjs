@@ -346,7 +346,7 @@ main section {
   width: 100%;
   border: 1px solid var(--pink);
 }
-/* 
+
 .button.loading {
   color: transparent;
 }
@@ -375,7 +375,7 @@ main section {
   to {
     transform: rotate(1turn);
   }
-} */
+}
 
 
 /*
