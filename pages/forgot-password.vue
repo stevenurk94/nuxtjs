@@ -51,7 +51,8 @@ export default {
 
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
-                document.querySelector("button").classList.remove("loading");
+                var button2 = document.querySelector("button");
+                button2.classList.remove("loading");
             }
         }
     },
