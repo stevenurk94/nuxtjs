@@ -38,8 +38,6 @@ export default {
 
     methods: {
         async forgotPassword() {
-            var button = document.querySelector("button");
-            button.onclick.classList.add("loading");
 
             try {
                 await this.$axios.post("auth/forgot-password", {
@@ -52,7 +50,6 @@ export default {
 
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
-                button.classList.remove("loading");
             }
         }
     }

@@ -51,8 +51,6 @@ export default {
     methods: {
         async resetPassword() {
             this.error = null;
-            var button = document.querySelector("button");
-            button.onclick.classList.add("loading");
 
             if (this.password1 !== this.password2) {
                 this.error = "Passwords do not match.";
@@ -67,7 +65,6 @@ export default {
                 this.success = "Password updated succesfully. You can now use it to log in to your account.";
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
-                button.classList.remove("loading");
             }
         }
     }
