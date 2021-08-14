@@ -55,16 +55,16 @@ export default {
                 button2.classList.remove("loading");
             }
         }
-    },
-
-    mounted: function() {
-        var button = document.querySelector("button");
-
-        button.addEventListener("click", () => {
-            button.classList.add("loading");
-        })
-
     }
+
+    // mounted: function() {
+    //     var button = document.querySelector("button");
+
+    //     button.addEventListener("click", () => {
+    //         button.classList.add("loading");
+    //     })
+
+    // }
 }
 </script>
 
