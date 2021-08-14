@@ -28,14 +28,8 @@
 
 <script>
 
-import Notification from "~/components/Notification";
-
 export default {
     middleware: "guest",
-
-    components: {
-        Notification,
-    },
 
     asyncData(context) {
         if (!context.route.query.code) context.redirect("/forgot-password");

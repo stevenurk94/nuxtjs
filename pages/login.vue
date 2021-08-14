@@ -31,14 +31,8 @@
 
 <script>
 
-import Notification from "~/components/Notification";
-
 export default {
-    components: {
-        Notification,
-    },
-
-    // middleware: "guest",
+    middleware: "guest",
 
     data() {
         return {
