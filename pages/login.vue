@@ -4,7 +4,7 @@
 
             <Notification v-if="error" type="danger" :message="error" />
 
-            <form method="post" class="form" @submit.prevent="login">
+            <form class="form" method="post" @submit.prevent="login">
                 <h1>Login</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quas saepe eveniet dicta impedit vero assumenda facere eaque iusto dolor.</p>
                 <span data-field="Emailadres *" class="form-field">
@@ -19,6 +19,10 @@
 
 
             </form>
+
+            <div>
+                <NuxtLink to="/forgot-password">Forgot password?</NuxtLink>
+            </div>
 
         </section>
     </main>

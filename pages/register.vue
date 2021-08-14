@@ -37,7 +37,7 @@ export default {
         Notification,
     },
 
-    // middleware: "guest",
+    middleware: "guest",
 
     data() {
         return {
