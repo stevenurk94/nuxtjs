@@ -32,6 +32,8 @@
 
 export default {
 
+    layout: "empty",
+
     middleware: "guest",
 
     data() {
@@ -76,3 +78,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+main {
+    background: var(--darkblue);
+    height: 100vh;
+    width: 100vw;
+}
+
+</style>

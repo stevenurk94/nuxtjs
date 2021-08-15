@@ -29,6 +29,8 @@
 <script>
 
 export default {
+
+    layout: "empty",
     middleware: "guest",
 
     asyncData(context) {
@@ -81,3 +83,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+main {
+    background: var(--darkblue);
+    height: 100vh;
+    width: 100vw;
+}
+
+</style>

@@ -74,6 +74,10 @@ export default {
 
         }
       }
+    },
+
+    redirect: {
+      login: '/account/login'
     }
   },
 
