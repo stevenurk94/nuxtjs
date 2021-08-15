@@ -62,11 +62,22 @@ export default {
                     passwordConfirmation: this.password2
                 });
 
+                document.querySelector("form button").classList.remove("loading");
                 this.success = "Password updated succesfully. You can now use it to log in to your account.";
+
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
+                document.querySelector("form button").classList.remove("loading");
             }
         }
+    },
+
+    mounted: function() {
+        const button = document.querySelector("form button");
+
+        button.addEventListener("click", () => {
+            button.classList.add("loading");
+        });
     }
 }
 </script>

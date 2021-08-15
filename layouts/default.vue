@@ -349,6 +349,7 @@ main section {
 
 .button.loading {
   color: transparent;
+  box-shadow: 0 0 0.2rem 0.2rem rgb(214 76 168 / 50%);
 }
 
 .button.loading::after {
@@ -364,7 +365,7 @@ main section {
   border: 4px solid transparent;
   border-top-color: #ffffff;
   border-radius: 50%;
-  animation: spinner 1s ease infinite;
+  animation: spinner 1s infinite;
 }
 
 @keyframes spinner {

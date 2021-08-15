@@ -2,7 +2,7 @@
     <main>
         <section>
             <div v-for="city in cities" :key="city.id">
-                <img :src="`https://genesisnow.herokuapp.com${ city.Image.formats.small.url }`" :alt="city.name">
+                <img v-if="city.Image.formats.small.url" :src="`https://genesisnow.herokuapp.com${ city.Image.formats.small.url }`" :alt="city.name">
                 <div>
                     <h2>{{ city.Province }}</h2>
                     <h2>{{ city.Name }}</h2>
