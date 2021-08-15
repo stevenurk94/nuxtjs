@@ -26,13 +26,13 @@
           <li><NuxtLink to="/beers">Beers<span></span></NuxtLink></li>
           <li><NuxtLink to="/contact">Contact<span></span></NuxtLink></li>
 
-          <li v-if="isAuthenticated"><NuxtLink to="/profile">My Profile</NuxtLink></li>
+          <li v-if="isAuthenticated"><NuxtLink to="/account">My Profile</NuxtLink></li>
           <li v-if="isAuthenticated"><a href="/" @click="logout">Logout</a></li>
 
         </ul>
         <div v-if="!isAuthenticated">
-          <NuxtLink to="/login" class="button">Log In</NuxtLink>
-          <NuxtLink to="/register" class="button">Register</NuxtLink>
+          <NuxtLink to="/account/login" class="button">Log In</NuxtLink>
+          <NuxtLink to="/account/register" class="button">Register</NuxtLink>
         </div>
       </nav>
     </div>

@@ -1,0 +1,27 @@
+
+@font-face {
+    src: url(assets/fonts/fontawesome/fa-light-300.ttf);
+    font-family: fa-light;
+  }
+  
+  @font-face {
+    src: url(assets/fonts/fontawesome/fa-brands-400.ttf);
+    font-family: fa-brands;
+  }
+  
+  @font-face {
+    src: url(assets/fonts/fontawesome/fa-solid-900.ttf);
+    font-family: fa-solid;
+  }
+  
+  @font-face {
+    src: url(assets/fonts/fontawesome/fa-regular-400.ttf);
+    font-family: fa-regular;
+  }
+  
+  @font-face {
+    src: url(assets/fonts/fontawesome/fa-duotone-900.ttf);
+    font-family: fa-duotone
+  }
+  
+  
