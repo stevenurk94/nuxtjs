@@ -2,10 +2,11 @@
     <main>
         <section>
 
-            <Notification v-if="success" type="success" :message="success" />
-            <Notification v-if="error" type="danger" :message="error" />
+ 
 
             <form v-if="!success" class="form" method="post" @submit.prevent="resetPassword">
+                <Notification v-if="success" type="success" :message="success" />
+                <Notification v-if="error" type="danger" :message="error" />
                 <h1>Reset Password</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quas saepe eveniet dicta impedit vero assumenda facere eaque iusto dolor.</p>
                 <span data-field="New Password *" class="form-field">

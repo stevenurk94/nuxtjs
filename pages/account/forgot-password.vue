@@ -2,10 +2,11 @@
     <main>
         <section>
 
-            <Notification v-if="success" type="success" :message="success" />
-            <Notification v-if="error" type="danger" :message="error" />
+
 
             <form class="form" v-if="!success" method="post" @submit.prevent="forgotPassword">
+                <Notification v-if="success" type="success" :message="success" />
+                <Notification v-if="error" type="danger" :message="error" />
                 <h1>Forgot Password</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quas saepe eveniet dicta impedit vero assumenda facere eaque iusto dolor.</p>
                 <span data-field="Emailadres *" class="form-field">
