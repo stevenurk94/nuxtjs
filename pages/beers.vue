@@ -40,6 +40,8 @@
 
 import beers from "~/assets/json/beers.json";
 
+
+
 export default {
 
     data () {

@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 export default {
+
   pageTransition: 'pages',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -33,6 +34,16 @@ export default {
   plugins: [
     '~/plugins/axios'
   ],
+
+  // Middleware
+  router: {
+    middleware: ['success']
+  },
+
+  // Server Middleware
+  // serverMiddleware: [
+  //   "~/serverMiddleware/redirects"
+  // ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

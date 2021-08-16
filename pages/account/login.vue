@@ -2,9 +2,10 @@
     <main>
         <section>
 
-            <Notification v-if="error" type="danger" :message="error" />
+            
 
             <form class="form" method="post" @submit.prevent="login">
+                <Notification v-if="error" type="danger" :message="error" />
                 <h1>Login</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quas saepe eveniet dicta impedit vero assumenda facere eaque iusto dolor.</p>
                 <span data-field="Emailadres *" class="form-field">
@@ -16,13 +17,10 @@
                     <p>Luister vriend! Dit gaat zo niet werken hé!</p>
                 </span>
                 <button class="submit button" type="submit" name="submit" placeholder="Verzenden">Log In</button>
+                <NuxtLink to="/account/forgot-password">Forgot password?</NuxtLink>
 
 
             </form>
-
-            <div>
-                <NuxtLink to="/account/forgot-password">Forgot password?</NuxtLink>
-            </div>
 
         </section>
     </main>
@@ -31,8 +29,6 @@
 <script>
 
 export default {
-
-    layout: "empty",
 
     middleware: "guest",
 
@@ -76,13 +72,3 @@ export default {
     }
 };
 </script>
-
-<style scoped>
-
-main {
-    background: var(--darkblue);
-    height: 100vh;
-    width: 100vw;
-}
-
-</style>

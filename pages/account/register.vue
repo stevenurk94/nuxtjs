@@ -33,7 +33,6 @@
 export default {
 
     layout: "empty",
-
     middleware: "guest",
 
     data() {
@@ -78,6 +77,7 @@ export default {
     }
 }
 </script>
+
 
 <style scoped>
 
