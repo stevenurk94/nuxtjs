@@ -2,11 +2,10 @@
     <main>
         <section>
 
-
+            <Notification v-if="success" type="success" :message="success" />
+            <Notification v-if="error" type="danger" :message="error" />
 
             <form class="form" v-if="!success" method="post" @submit.prevent="register">
-                <Notification v-if="success" type="success" :message="success" />
-                <Notification v-if="error" type="danger" :message="error" />
                 <h1>Register</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quas saepe eveniet dicta impedit vero assumenda facere eaque iusto dolor.</p>
                 <span data-field="First name *" class="form-field">
