@@ -6,7 +6,7 @@
             <form class="form" method="post" @submit.prevent="forgotPassword">
                 <Loading />
                 <ForgotPWConfirmation />
-                <div class="form-wrapper" v-if="!success">
+                <div class="fields-wrapper" v-if="!success">
                     <h1>Forgot Password</h1>                  
                     <Notification v-if="error" type="danger" :message="error" />
                     <span data-field="Emailadres *" class="form-field">

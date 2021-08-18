@@ -6,7 +6,7 @@
             <form class="form" method="post" @submit.prevent="resetPassword">
                 <ResetPWConfirmation />
                 <Loading />
-                <div class="form-wrapper" v-if="!success">
+                <div class="fields-wrapper" v-if="!success">
                     <h1>Reset Password</h1>
                     <Notification v-if="success" type="success" :message="success" />
                     <Notification v-if="error" type="danger" :message="error" />
