@@ -270,8 +270,35 @@ p {
 
 
 
+/* CONFIRMATION BLOCK */
 
+.confirmation {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background: var(--bg);
+  border-radius: 10px;
+  z-index: 2;
+  padding: 0 25px;
+}
 
+.confirmation span {
+  font-family: fa-solid;
+  color: var(--pink);
+  font-size: 80px;
+}
+
+.confirmation p {
+  text-align: center;
+}
+
+.confirmation div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 
 
@@ -284,16 +311,20 @@ p {
 /* ############################ FORMS ######################### */
 /* ############################################################ */
 
+
 .form {
-  display: flex;
-  flex-wrap: wrap;
   background: var(--bg);
   padding: 30px;
   border-radius: 10px;
   max-width: 500px;
   box-shadow: var(--cbf-boxshadow);
-  margin: 150px 0 100px 0;
   transition: var(--trans);
+  position: relative;
+}
+
+.fields-wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .form-field {
