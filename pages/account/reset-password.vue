@@ -2,22 +2,24 @@
     <main>
         <section>
 
-            <Notification v-if="success" type="success" :message="success" />
-            <Notification v-if="error" type="danger" :message="error" />
-
-            <form v-if="!success" class="form" method="post" @submit.prevent="resetPassword">
-                <h1>Reset Password</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quas saepe eveniet dicta impedit vero assumenda facere eaque iusto dolor.</p>
-                <span data-field="New Password *" class="form-field">
-                    <input v-model="password1" class="form-input" type="password" name="password" placeholder="New Password *" maxlength="80">
-                    <p>Luister vriend! Dit gaat zo niet werken hé! Je moet wel een geldig emailadres invullen.</p>
-                </span>
-                <span data-field="Confirm New Password *" class="form-field">
-                    <input v-model="password2" class="form-input" type="password" name="password" placeholder="Confirm New Password *">
-                    <p>Luister vriend! Dit gaat zo niet werken hé!</p>
-                </span>
-                <button class="submit button" type="submit" name="submit">Reset Password</button>
-
+        
+            <form class="form" method="post" @submit.prevent="resetPassword">
+                <ResetPWConfirmation />
+                <Loading />
+                <div class="form-wrapper" v-if="!success">
+                    <h1>Reset Password</h1>
+                    <Notification v-if="success" type="success" :message="success" />
+                    <Notification v-if="error" type="danger" :message="error" />
+                    <span data-field="New Password *" class="form-field">
+                        <input v-model="password1" class="form-input" type="password" name="password" placeholder="New Password *" maxlength="80">
+                        <p>Luister vriend! Dit gaat zo niet werken hé! Je moet wel een geldig emailadres invullen.</p>
+                    </span>
+                    <span data-field="Confirm New Password *" class="form-field">
+                        <input v-model="password2" class="form-input" type="password" name="password" placeholder="Confirm New Password *">
+                        <p>Luister vriend! Dit gaat zo niet werken hé!</p>
+                    </span>
+                    <button class="submit button" type="submit" name="submit">Reset Password</button>
+                </div>
 
             </form>
 
@@ -64,12 +66,13 @@ export default {
                     passwordConfirmation: this.password2
                 });
 
-                document.querySelector("form button").classList.remove("loading");
-                this.success = "Password updated succesfully. You can now use it to log in to your account.";
+                document.querySelector(".confirmation").style.display = "flex";
+                document.querySelector(".loadingblock").style.display = "none";
+                this.success = true;
 
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;
-                document.querySelector("form button").classList.remove("loading");
+                document.querySelector(".loadingblock").style.display = "none";
             }
         }
     },
@@ -78,7 +81,7 @@ export default {
         const button = document.querySelector("form button");
 
         button.addEventListener("click", () => {
-            button.classList.add("loading");
+            document.querySelector(".loadingblock").style.display = "flex";
         });
     }
 }

@@ -27,7 +27,7 @@
           <li><NuxtLink to="/contact">Contact<span></span></NuxtLink></li>
 
           <li v-if="isAuthenticated"><NuxtLink to="/account">My Profile</NuxtLink></li>
-          <li v-if="isAuthenticated"><a href="/" @click="logout">Logout</a></li>
+          <li v-if="isAuthenticated"><a to="/account/login" @click="logout">Logout</a></li>
 
         </ul>
         <div v-if="!isAuthenticated">
@@ -59,6 +59,7 @@ export default {
   methods: {
     async logout() {
       await this.$auth.logout()
+      this.$router.push("/account/login")
     }
   },
 
