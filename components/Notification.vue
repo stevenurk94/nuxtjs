@@ -3,6 +3,7 @@
         <p>
             {{ message }}
         </p>
+        <span></span>
     </div>
 </template>
 
@@ -21,7 +22,17 @@ export default {
             default: "",
         },
     },
-};
+
+
+    mounted: function() {
+        const times = document.querySelector(".notification span");
+
+        times.addEventListener("click", function() {
+            document.querySelector(".notification").style.display = "none";
+        });
+    }
+}
+
 </script>
 
 <style scoped>
@@ -31,11 +42,23 @@ export default {
     padding: 20px;
     max-width: 700px;
     width: 99%;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     display: flex;
     margin: auto;
     left: 0;
     right: 0;
+}
+
+.notification span {
+    font-family: fa-light;
+    font-size: 19px;
+    cursor: pointer;
+    transition: color 100ms ease-in-out;
+}
+
+.notification span:hover {
+    color: rgba(248,81,73,0.4);
 }
 
 .notification.is-danger {

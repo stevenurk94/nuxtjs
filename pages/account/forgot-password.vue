@@ -42,13 +42,13 @@ export default {
 
     methods: {
         async forgotPassword() {
+            this.error = null;
 
             try {
                 await this.$axios.post("auth/forgot-password", {
                     email: this.email
                 });
 
-                this.error = null;
                 document.querySelector(".loadingblock").style.display = "none";
                 document.querySelector(".confirmation").style.display = "flex";
                 this.success = true;
