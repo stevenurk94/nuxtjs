@@ -70,7 +70,7 @@ input[type=checkbox] {
 label {
     width: 30px;
     height: 30px;
-    border: 1px solid var(--grey-2);
+    border: 2px solid var(--grey-2);
     border-radius: 2rem;
     display: flex;
     justify-content: center;
@@ -85,7 +85,7 @@ label {
 
 input:checked ~ label {
     background: var(--darkblue);
-    border: 1px solid var(--darkblue);
+    border: 2px solid var(--darkblue);
 }
 
 
