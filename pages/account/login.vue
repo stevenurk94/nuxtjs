@@ -2,7 +2,6 @@
     <main>
         <section>
 
-
             <form class="form" method="post" @submit.prevent="login">
 
                 <div class="fields-wrapper">
@@ -18,13 +17,18 @@
                         <p>Luister vriend! Dit gaat zo niet werken hé!</p>
                     </span>
                     <button class="submit button" type="submit" name="submit" placeholder="Verzenden">Log In</button>
-                    <NuxtLink to="/account/forgot-password">Forgot password?</NuxtLink>
-
                 </div>
                 
-
-
             </form>
+
+            <div class="account-links">
+                <NuxtLink to="/account/register">Register now</NuxtLink>
+                &nbsp;&nbsp;
+                <p>or</p>
+                &nbsp;&nbsp;
+                <NuxtLink to="/account/forgot-password">Forgot password</NuxtLink>
+            </div>            
+
 
         </section>
     </main>
@@ -57,7 +61,6 @@ export default {
                 });
 
                 this.$router.push("/account");
-
                 
             } catch (e) {
                 this.error = e.response.data.message[0].messages[0].message;

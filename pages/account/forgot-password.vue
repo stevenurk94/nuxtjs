@@ -16,8 +16,15 @@
                     <button class="submit button" type="submit" name="submit">Email me a reset link</button>
                 </div>
 
-
             </form>
+
+            <div class="account-links">
+                <NuxtLink to="/account/login">Log In</NuxtLink>
+                &nbsp;&nbsp;
+                <p>or</p>
+                &nbsp;&nbsp;
+                <NuxtLink to="/account/register">Register now</NuxtLink>
+            </div>
 
         </section>
     </main>

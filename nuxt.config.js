@@ -37,14 +37,13 @@ export default {
 
   // Middleware
   router: {
-    middleware: ['success']
   },
 
   // Server Middleware
-  // serverMiddleware: [
-  //   "~/serverMiddleware/redirects"
-  // ],
-
+  serverMiddleware: [
+    // '~/middleware/redirects.js'
+  ],
+  
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -56,7 +55,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-    '@nuxtjs/auth',
+    '@nuxtjs/auth'
   ],
 
   // Axios Configuration: https://axios.nuxtjs.org/setup

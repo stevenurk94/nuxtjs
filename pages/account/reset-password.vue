@@ -36,7 +36,7 @@ export default {
     middleware: "guest",
 
     asyncData(context) {
-        if (!context.route.query.code) context.redirect("/forgot-password");
+        if (!context.route.query.code) context.redirect("/account/forgot-password");
         else
         return {
             code: context.route.query.code,
@@ -58,6 +58,7 @@ export default {
 
             if (this.password1 !== this.password2) {
                 this.error = "Passwords do not match.";
+                document.querySelector(".loadingblock").style.display = "none";
                 return;
             } try {
                 await this.$axios.post("auth/reset-password", {

@@ -301,8 +301,20 @@ p {
 }
 
 
+/* Account links */
+.account-links {
+  display: flex;
+}
 
 
+.account-links a {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.2rem;
+  letter-spacing: .5px;
+  font-family: 'Work Sans', serif;
+  color: var(--darkblue-light);
+}
 
 
 
