@@ -1,0 +1,379 @@
+
+/* STYLE OF THE COOKIE BANNER */
+.gtm-cb {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 20;
+    flex-wrap: nowrap;
+  
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 50px;
+  
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    max-width: 45rem;
+    background: var(--darkblue);
+    border-radius: 10px;
+  }
+  
+  .gtm-cb .cb-info {
+    margin-bottom: 30px;
+  }
+  
+  .gtm-cb .cb-info h5 {
+    color: var(--white);
+    margin-bottom: 25px;
+    font-family: 'Work Sans', serif;
+    font-weight: 500;
+    font-size: 19px;
+  }
+  
+  .gtm-cb .cb-info p {
+    color: var(--white);
+    font-family: 'Work Sans', serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.2rem;
+  }
+  
+  .gtm-cb .cb-info p a {
+    color: inherit;
+    position: relative;
+  }
+  
+  .gtm-cb .cb-info p a::after {
+    content: "";
+    position: absolute;
+    background: var(--white);
+    height: 0.7px;
+    width: 100%;
+    top: 94%;
+    left: 0;
+  }
+  
+  .gtm-cb .cb-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 235px;
+  }
+  
+  
+  
+  .gtm-cb .cb-buttons .accept-button {
+    border: solid 1px var(--dark-gold);
+    background: inherit;
+    border-radius: 1.5rem;
+    color: var(--white);
+    position: relative;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.5;
+    padding: 8px 25px;
+    cursor: pointer;
+    transition: all 0.2s ease, border 1ms ease;
+    will-change: transform;
+    transform: scale(0.999);
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .gtm-cb .cb-buttons .accept-button::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: var(--dark-gold);
+    transition: all ease 200ms;
+    will-change: transform;
+    border-radius: 1.5rem;
+    width: 42px;
+    left: -42px;
+    z-index: -1;
+  }
+  
+  .gtm-cb .cb-buttons .accept-button:hover {
+    will-change: transform;
+    transform: scale(1.05);
+    border: 1px solid transparent;
+  }
+  
+  .gtm-cb .cb-buttons .accept-button:hover::before {
+    left: 0;
+    width: 100%;
+  }
+  
+  .gtm-cb .cb-buttons .accept-button:active {
+    box-shadow: 0 0 0.2rem 0.2rem rgb(112 82 11 / 50%);
+  }
+  
+  
+  
+  .gtm-cb .cb-buttons .accept-button:focus {
+    will-change: transform;
+    transform: scale(1.05);
+    border: 1px solid transparent;
+  }
+  
+  .gtm-cb .cb-buttons .accept-button:focus::before {
+    left: 0;
+    width: 100%;
+  }
+  
+  .gtm-cb .cb-buttons .decline-button {
+    background: inherit;
+    border: 0;
+    padding: 0;
+    height: fit-content;
+  }
+  
+  .gtm-cb .cb-buttons .decline-button a {
+    color: var(--white);
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 1;
+    position: relative;
+    font-family: 'Work Sans', serif;
+    letter-spacing: -0.3px;
+  }
+  
+  .gtm-cb .cb-buttons .decline-button a::after {
+    content: "";
+    position: absolute;
+    background: var(--white);
+    height: 0.7px;
+    width: 100%;
+    top: 94%;
+    left: 0;
+  }
+  
+  
+  /* STYLE OF COOKIE BANNER UNDERLAY */
+  .cb-underlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0 0 0 / 65%);
+    z-index: 10;
+    top: 0;
+  }
+  
+  
+  
+  /* ################## STYLE OF THE COOKIE FORM #################### */
+  
+  .cb-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 70px;
+    -webkit-box-shadow: var(--cbf2-boxshadow);
+    box-shadow: var(--cbf2-boxshadow);
+    border-radius: 10px;
+    flex: 0 0 auto;
+    max-width: 53rem;
+    width: 100%;
+    transition: var(--trans);
+    background: var(--darkblue);
+  }
+  
+  .cb-form h4 {
+    color: var(--white);
+    font-family: 'Work Sans', serif;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  
+  .cb-form p {
+    color: var(--white);
+    font-family: 'Work Sans', serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .form-choices {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .form-choices li {
+    width: calc(50% - 10px);
+    cursor: pointer;
+    display: flex;
+  }
+  
+  .cookie-choice {
+    background: #121E3B;
+    border-radius: 10px;/*5px*/
+    border: 2px solid rgba(255 255 255 / 40%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .cookie-choice:hover {
+    border-color: rgba(255 255 255 / 70%);
+  }
+  
+  .cookie-choice:hover h5::before {
+    border-color: rgba(255 255 255 / 70%);
+  }
+  
+  .cookie-choice.selected {
+    border: 2px solid var(--white);
+  }
+  
+  .cookie-choice h5 {
+    color: var(--white);
+    font-family: 'Work Sans', serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 30px;
+    flex-wrap: nowrap;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cookie-choice:hover h5, .cookie-choice:hover table {
+    color: var(--gold);
+  }
+  
+  .cookie-choice h5::before {
+    content: "";
+    font-family: fa-solid;
+    border: 2.2px solid rgba(255 255 255 / 40%);
+    border-radius: 50%; /* 5px */
+    margin-right: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cookie-choice.selected h5::before {
+    content: "\F00C";
+    border: 2.2px solid var(--white);
+  }
+  
+  .cookie-choice table {
+    color: var(--white);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cookie-choice table tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+  }
+  
+  .cookie-choice table tr:nth-child(2n+1) {
+    background: var(--darkblue);
+  }
+  
+  .cookie-choice table tr .item {
+    font-family: 'Work Sans', serif;
+    font-weight: 300;
+  }
+  
+  .cookie-choice table tr .item.disagreed {
+    display: flex;
+    text-decoration: line-through;
+  }
+  
+  .cookie-choice table tr .item-check::after {
+    content: "\F00C";
+    font-family: fa-solid;
+    display: flex;
+    justify-content: center;
+    width: 20px;
+  }
+  
+  .cookie-choice table tr .item-close::after {
+    content: "\F00D";
+    font-family: fa-solid;
+    display: flex;
+    justify-content: center;
+    width: 20px;
+  }
+  
+  
+  
+  
+  @media screen and (max-width: 992px) {
+    .cb-form {
+      max-width: 86vw;
+      padding: 5% 7% 5% 7%;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .form-choices {
+      flex-direction: column;
+      align-items: center;
+      -ms-flex-direction: column;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+    }
+  
+    .form-choices li {
+      width: 90%;
+    }
+  
+    .form-choices li:first-child {
+      margin-bottom: 20px;
+    }
+  
+    .form-choices li:last-child {
+      margin-bottom: 5px;
+    }
+  
+    .gtm-cb {
+      max-width: 93vw;
+      padding: 6%;
+    }
+  
+    .gtm-cb .cb-info {
+      margin-bottom: calc(4% + 4px);
+    }
+  
+    .gtm-cb .cb-info h5 {
+      margin-bottom: 4%;
+      font-size: 18.5px;
+    }
+  
+    .gtm-cb .cb-info p {
+      font-size: 14.5px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .gtm-cb .cb-info h5 {
+      font-size: 18px;
+    }
+  
+    .gtm-cb .cb-info p {
+      font-size: 14px;
+    }
+  
+    .form-choices li {
+      width: 100%;
+    }
+  }
+  

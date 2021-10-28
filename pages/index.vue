@@ -59,8 +59,9 @@ export default {
 
 
 .home-hero {
-  background: yellowgreen;
+  background: url("~/assets/image00013.jpeg");
   max-width: 100%;
+  max-height: 100%;
 }
 
 .home-hero div {
@@ -76,9 +77,6 @@ export default {
   padding-left: 1.5rem;
   outline: none;
 }
-
-
-
 
 
 
